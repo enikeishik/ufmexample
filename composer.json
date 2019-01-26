@@ -1,0 +1,23 @@
+{
+    "name": "enikeishik/ufmexample",
+    "type": "library",
+    "description": "UFO Framework Example module.",
+    "keywords": ["ufo","framework","module","web"],
+    "homepage": "https://github.com/enikeishik/ufmexample",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Enikeishik",
+            "email": "enikeishik@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ufo\\Modules\\Enikeishik\\Ufmexample\\": "src/"
+        }
+    }
+}
