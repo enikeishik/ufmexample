@@ -25,6 +25,7 @@ class Controller extends BaseController
     protected function initParams(): void
     {
         parent::initParams();
+        $this->params['filter'] = Parameter::make('filter', 'string', '', 'path', false, ''), 
         $this->params['isAction'] = Parameter::make('isAction', 'bool', 'action', 'path', false, false), 
     }
     
@@ -41,6 +42,15 @@ class Controller extends BaseController
                 'Moved Temporarily', 
                 ['location' => $app->getPath()]
             );
+        }
+        
+        switch ($this->params['filter']->value) {
+            case 'marked':
+            case 'unmarked':
+            case '':
+                break;
+            default:
+                $this->params['filter']->value = '';
         }
         
         return parent::compose($section);

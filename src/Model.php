@@ -39,8 +39,15 @@ class Model extends BaseModel
      */
     public function getItems(): array
     {
+        $sqlFilter = '';
+        if ('marked' == $this->params['filter']->value) {
+            $sqlFilter = ' WHERE marked!=0';
+        } elseif ('unmarked' == $this->params['filter']->value) {
+            $sqlFilter = ' WHERE marked=0';
+        }
         $sql =  'SELECT *'
                 ' FROM #__enikeishik_ufmexample_items' . 
+                $sqlFilter . 
                 ' ORDER BY created_at DESC';
         return $this-db->getItems($sql);
     }

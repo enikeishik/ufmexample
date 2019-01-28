@@ -15,6 +15,11 @@
 <h2><?=$section->title?></h2>
 <h1><?=$item->title?></h1>
 <p><?=$item->text?></p>
+<?php if ($item->marked): ?>
+<p>Item was marked at <?=$item->marked_at?></a></p>
+<?php else: ?>
+<p><a href="<?=$section->path?>/<?=$item->id?>/mark">Mark item</a></p>
+<?php endif; ?>
 <?=$this->renderWidgets('left col top')?>
 </body>
 </html>
