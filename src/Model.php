@@ -45,11 +45,11 @@ class Model extends BaseModel
         } elseif ('unmarked' == $this->params['filter']->value) {
             $sqlFilter = ' WHERE marked=0';
         }
-        $sql =  'SELECT *'
+        $sql =  'SELECT *' . 
                 ' FROM #__enikeishik_ufmexample_items' . 
                 $sqlFilter . 
                 ' ORDER BY created_at DESC';
-        return $this-db->getItems($sql);
+        return $this->db->getItems($sql);
     }
     
     /**
@@ -62,7 +62,7 @@ class Model extends BaseModel
             return null;
         }
         
-        $sql =  'SELECT *'
+        $sql =  'SELECT *' . 
                 ' FROM #__enikeishik_ufmexample_items' . 
                 ' WHERE id=' . $this->params['itemId']->value;
         return $this->db->getItem($sql);
