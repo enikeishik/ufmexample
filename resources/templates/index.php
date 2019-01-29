@@ -21,8 +21,8 @@
     </p>
     <?php foreach ($items as $item): ?>
         <p>
-        <b><?=$item->title?></b><br>
-        <?=$item->text?>
+        <b><?=$item['title']?></b><br>
+        <?=$item['text']?>
         </p>
     <?php endforeach; ?>
 <?php else: ?>
