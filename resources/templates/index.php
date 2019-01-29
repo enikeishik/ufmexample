@@ -22,7 +22,7 @@
     <?php foreach ($items as $item): ?>
         <p>
         <b><?=$item['title']?></b><br>
-        <?=$item['text']?>
+        <?=$item['content']?>
         </p>
     <?php endforeach; ?>
 <?php else: ?>

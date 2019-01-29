@@ -14,7 +14,7 @@
 <body>
 <h2><?=$section->title?></h2>
 <h1><?=$item['title']?></h1>
-<p><?=$item['text']?></p>
+<p><?=$item['content']?></p>
 <?php if ($item['marked']): ?>
 <p>Item was marked at <?=$item['marked_at']?></a></p>
 <?php else: ?>
