@@ -44,7 +44,7 @@ class Controller extends BaseController
             return $this->app->getError(
                 302, 
                 'Moved Temporarily', 
-                ['location' => $app->getPath()]
+                ['location' => $this->app->getPath()]
             );
         }
         
