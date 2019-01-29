@@ -34,6 +34,9 @@ class Controller extends BaseController
      */
     public function compose(Section $section = null): Result
     {
+        $this->initParams();
+        $this->setParams();
+        
         if ($this->params['isAction']) {
             $model = $this->getModel();
             $model->makeAction();
