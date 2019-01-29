@@ -38,7 +38,7 @@ class Controller extends BaseController
         $this->setParams($section->params);
         $this->container->set('params', $this->params);
         
-        if ($this->params['isAction']) {
+        if ($this->params['isAction']->value) {
             $model = $this->getModel();
             $model->makeAction();
             return $this->app->getError(
