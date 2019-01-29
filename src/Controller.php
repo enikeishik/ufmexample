@@ -65,7 +65,7 @@ class Controller extends BaseController
      */
     protected function setDataFromModel(ModelInterface $model): void
     {
-        if (0 != $this->params['itemId']) {
+        if (0 != $this->params['itemId']->value) {
             $this->data['item'] = $model->getItem();
             return;
         }
@@ -89,7 +89,7 @@ class Controller extends BaseController
     protected function getView(): ViewInterface
     {
         $view = new View(
-            0 != $this->params['itemId'] ? 'item' : 'index', 
+            0 != $this->params['itemId']->value ? 'item' : 'index', 
             $this->data
         );
         $view->inject($this->container);
