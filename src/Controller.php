@@ -22,16 +22,6 @@ class Controller extends BaseController
     /**
      * @see parent
      */
-    protected function initParams(): void
-    {
-        parent::initParams();
-        $this->params['filter'] = Parameter::make('filter', 'string', '', 'path', false, '');
-        $this->params['isAction'] = Parameter::make('isAction', 'bool', 'action', 'path', false, false);
-    }
-    
-    /**
-     * @see parent
-     */
     public function compose(Section $section = null): Result
     {
         $this->initParams();
@@ -48,6 +38,16 @@ class Controller extends BaseController
             );
         }
         
+        $this->valudateParams();
+        
+        return parent::compose($section);
+    }
+    
+    /**
+     * @return void
+     */
+    protected valudateParams(): void
+    {
         switch ($this->params['filter']->value) {
             case 'marked':
             case 'unmarked':
@@ -56,8 +56,16 @@ class Controller extends BaseController
             default:
                 $this->params['filter']->value = '';
         }
-        
-        return parent::compose($section);
+    }
+    
+    /**
+     * @see parent
+     */
+    protected function initParams(): void
+    {
+        parent::initParams();
+        $this->addParam(Parameter::makeString('filter', '', 'path', false, ''));
+        $this->addParam(Parameter::makeBool('isAction', 'action', 'path', false, false));
     }
     
     /**
