@@ -64,7 +64,7 @@ class Controller extends BaseController
     protected function initParams(): void
     {
         parent::initParams();
-        $this->addParam(Parameter::makeString('filter', '', 'path', false, ''));
+        $this->addParam(Parameter::makeString('filter', '', 'path', true, ''));
         $this->addParam(Parameter::makeBool('isAction', 'mark', 'path', true, false));
     }
     
