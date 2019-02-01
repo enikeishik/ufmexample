@@ -41,7 +41,9 @@ class Controller extends BaseController
         
         $this->validateParams();
         
-        return parent::compose($section);
+        $this->setData($section);
+        
+        return new Result($this->getView());
     }
     
     /**
