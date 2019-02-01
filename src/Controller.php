@@ -84,23 +84,16 @@ class Controller extends BaseController
     /**
      * @see parent
      */
-    protected function getModel(): ModelInterface
+    protected function getModelObject(): ModelInterface
     {
-        $model = new Model();
-        $model->inject($this->container);
-        return $model;
+        return new Model();
     }
     
     /**
      * @see parent
      */
-    protected function getView(): ViewInterface
+    protected function getViewObject(): ViewInterface
     {
-        $view = new View(
-            0 != $this->params['itemId']->value ? 'item' : 'index', 
-            $this->data
-        );
-        $view->inject($this->container);
-        return $view;
+        return new View(0 != $this->params['itemId']->value ? 'item' : 'index');
     }
 }
