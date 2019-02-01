@@ -24,6 +24,8 @@ class Controller extends BaseController
      */
     public function compose(Section $section = null): Result
     {
+        $this->container->set('section', $section);
+        
         $this->initParams();
         $this->setParams($section->params);
         $this->container->set('params', $this->params);
