@@ -38,7 +38,7 @@ class Controller extends BaseController
             );
         }
         
-        $this->valudateParams();
+        $this->validateParams();
         
         return parent::compose($section);
     }
@@ -46,7 +46,7 @@ class Controller extends BaseController
     /**
      * @return void
      */
-    protected valudateParams(): void
+    protected function validateParams(): void
     {
         switch ($this->params['filter']->value) {
             case 'marked':
