@@ -68,7 +68,7 @@ class Controller extends BaseController
     {
         parent::initParams();
         $this->addParam(Parameter::makeString('filter', '', 'path', true, ''));
-        $this->addParam(Parameter::makeBool('isAction', 'mark', 'path', true, false));
+        $this->addParam(Parameter::makeBool('isAction', 'setmark', 'path', true, false));
     }
     
     /**

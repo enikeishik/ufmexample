@@ -18,7 +18,7 @@
 <?php if ($item['marked']): ?>
 <p>Item was marked at <?=$item['marked_at']?></a></p>
 <?php else: ?>
-<p><a href="<?=$section->path?>/<?=$item['id']?>/mark">Mark item</a></p>
+<p><a href="<?=$section->path?>/<?=$item['id']?>/setmark">Mark item</a></p>
 <?php endif; ?>
 <?=$this->renderWidgets('left col top')?>
 </body>
