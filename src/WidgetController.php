@@ -23,17 +23,10 @@ class WidgetController extends BaseController
      */
     public function compose(Section $section = null): Result
     {
-        $this->setData($section);
+        $model = $this->getModel();
+        $this->data['items'] = $model->getItems();
         
         return new Result($this->getView());
-    }
-    
-    /**
-     * @see parent
-     */
-    protected function setDataFromModel(ModelInterface $model): void
-    {
-        $this->data['items'] = $model->getItems();
     }
     
     /**
