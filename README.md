@@ -47,6 +47,7 @@ Add widget
                 'name' => '', 
                 'title' => 'UFO Framework Example module', 
                 'text' => '', 
+                'dbless' => false, 
             ]
         ]
     ]
