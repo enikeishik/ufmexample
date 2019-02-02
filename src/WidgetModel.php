@@ -17,6 +17,11 @@ use Ufo\Modules\Model as BaseModel;
 class WidgetModel extends BaseModel
 {
     /**
+     * @var \Ufo\Core\Db
+     */
+    protected $db;
+    
+    /**
      * Get items data.
      * @return array
      */
