@@ -1,6 +1,6 @@
 <?php
 /**
- * UFO Framework Stub module.
+ * UFO Framework Example module.
  * 
  * @copyright   Copyright (C) 2018 - 2019 Enikeishik <enikeishik@gmail.com>. All rights reserved.
  * @author      Enikeishik <enikeishik@gmail.com>
@@ -27,6 +27,9 @@ class Controller extends BaseController
         $this->container->set('section', $section);
         
         $this->initParams();
+        $this->addParam(Parameter::makeString('filter', '', 'path', true, ''));
+        $this->addParam(Parameter::makeBool('isAction', 'setmark', 'path', true, false));
+        
         $this->setParams($section->params);
         $this->container->set('params', $this->params);
         
@@ -61,16 +64,6 @@ class Controller extends BaseController
             default:
                 $this->params['filter']->value = '';
         }
-    }
-    
-    /**
-     * @see parent
-     */
-    protected function initParams(): void
-    {
-        parent::initParams();
-        $this->addParam(Parameter::makeString('filter', '', 'path', true, ''));
-        $this->addParam(Parameter::makeBool('isAction', 'setmark', 'path', true, false));
     }
     
     /**

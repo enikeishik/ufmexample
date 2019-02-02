@@ -1,6 +1,6 @@
 <?php
 /**
- * UFO Framework Stub module.
+ * UFO Framework Example module.
  * 
  * @copyright   Copyright (C) 2018 - 2019 Enikeishik <enikeishik@gmail.com>. All rights reserved.
  * @author      Enikeishik <enikeishik@gmail.com>
