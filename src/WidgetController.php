@@ -42,6 +42,6 @@ class WidgetController extends BaseController
      */
     protected function getViewObject(): ViewInterface
     {
-        return new View('widget');
+        return new View();
     }
 }

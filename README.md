@@ -45,7 +45,7 @@ Add widget
                 'vendor' => 'Enikeishik', 
                 'module' => 'Ufmexample', 
                 'name' => '', 
-                'title' => 'UFO Framework Example module', 
+                'title' => 'UFO Framework Example module widget', 
                 'text' => '', 
                 'dbless' => false, 
             ]
