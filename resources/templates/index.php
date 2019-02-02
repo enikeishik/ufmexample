@@ -1,8 +1,7 @@
 <?php
 /**
- * @var \Ufo\Modules\Enikeishik\Stub\View $this
+ * @var \Ufo\Modules\View $this
  * @var array $items
- * @var stdClass $item
  */
 
 ?><!DOCTYPE html>
