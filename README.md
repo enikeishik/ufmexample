@@ -48,6 +48,9 @@ Add widget
                 'title' => 'UFO Framework Example module widget', 
                 'text' => '', 
                 'dbless' => false, 
+                'params' => [
+                    'filter' => 'marked', 
+                ], 
             ]
         ]
     ]

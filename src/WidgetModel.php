@@ -23,13 +23,20 @@ class WidgetModel extends BaseModel
     
     /**
      * Get items data.
+     * @param string $filter = ''
      * @return array
      */
-    public function getItems(): array
+    public function getItems(string $filter = ''): array
     {
+        $sqlFilter = '';
+        if ('marked' == $filter) {
+            $sqlFilter = ' WHERE marked!=0';
+        } elseif ('unmarked' == $filter) {
+            $sqlFilter = ' WHERE marked=0';
+        }
         $sql =  'SELECT *' . 
                 ' FROM #__enikeishik_ufmexample_items' . 
-                ' WHERE marked!=0' . 
+                $sqlFilter . 
                 ' ORDER BY created_at DESC';
         return $this->db->getItems($sql);
     }

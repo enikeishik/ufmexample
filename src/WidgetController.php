@@ -22,7 +22,16 @@ class WidgetController extends BaseController
     public function compose(Section $section = null): Result
     {
         $model = $this->getModel();
-        $this->data['items'] = $model->getItems();
+        $widget = $this->container->widget;
+        
+        $filter = '';
+        if (!empty($widget->params['filter'])) {
+            if ('marked' == $widget->params['filter'] 
+            || 'unmarked' == $widget->params['filter']) {
+                $filter = $widget->params['filter'];
+            }
+        }
+        $this->data['items'] = $model->getItems($filter);
         
         return new Result($this->getView());
     }
