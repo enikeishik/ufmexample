@@ -36,7 +36,15 @@ class Controller extends BaseController
         if (0 != $this->params['itemId']->value 
         && $this->params['isAction']->value) {
             $model = $this->getModel();
-            $model->makeAction();
+            
+            $item = $model->getItem();
+            if (null == $item) {
+                return $this->app->getError(404, 'Not Found');
+            }
+            if (!$item['marked']) {
+                $model->makeAction();
+            }
+            
             return $this->app->getError(
                 302, 
                 'Moved Temporarily', 
