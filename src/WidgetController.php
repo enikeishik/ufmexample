@@ -13,8 +13,6 @@ use Ufo\Core\Result;
 use Ufo\Core\Section;
 use Ufo\Modules\Controller as BaseController;
 use Ufo\Modules\ModelInterface;
-use Ufo\Modules\View;
-use Ufo\Modules\ViewInterface;
 
 class WidgetController extends BaseController
 {
@@ -35,13 +33,5 @@ class WidgetController extends BaseController
     protected function getModelObject(): ModelInterface
     {
         return new WidgetModel();
-    }
-    
-    /**
-     * @see parent
-     */
-    protected function getViewObject(): ViewInterface
-    {
-        return new View();
     }
 }
