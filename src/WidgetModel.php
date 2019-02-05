@@ -12,7 +12,7 @@ namespace Ufo\Modules\Enikeishik\Ufmexample;
 use Ufo\Modules\Model as BaseModel;
 
 /**
- * Module level model base class.
+ * Widget model class.
  */
 class WidgetModel extends BaseModel
 {
