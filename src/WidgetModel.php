@@ -26,7 +26,7 @@ class WidgetModel extends BaseModel
      * @param string $filter = ''
      * @return array
      */
-    public function getItems(string $filter = ''): array
+    public function getItems(string $filter = '', int $count = 3): array
     {
         $sqlFilter = '';
         if ('marked' == $filter) {
@@ -37,7 +37,8 @@ class WidgetModel extends BaseModel
         $sql =  'SELECT *' . 
                 ' FROM #__enikeishik_ufmexample_items' . 
                 $sqlFilter . 
-                ' ORDER BY created_at DESC';
+                ' ORDER BY created_at DESC' . 
+                ' LIMIT ' . $count;
         return $this->db->getItems($sql);
     }
 }

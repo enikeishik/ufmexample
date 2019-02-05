@@ -31,7 +31,16 @@ class WidgetController extends BaseController
                 $filter = $widget->params['filter'];
             }
         }
-        $this->data['items'] = $model->getItems($filter);
+        
+        $count = 3;
+        if (!empty($widget->params['count'])) {
+            $count = (int) $widget->params['count'];
+            if ($count < 1 || $count > 10) {
+                $count = 3;
+            }
+        }
+        
+        $this->data['items'] = $model->getItems($filter, $count);
         
         return new Result($this->getView());
     }

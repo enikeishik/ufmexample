@@ -49,6 +49,7 @@ Add widget
                 'text' => '', 
                 'dbless' => false, 
                 'params' => [
+                    'count' => 3, 
                     'filter' => 'marked', 
                 ], 
             ]
