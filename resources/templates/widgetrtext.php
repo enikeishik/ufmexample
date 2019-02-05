@@ -10,5 +10,5 @@
 ?>
 <div class="widget">
 <span><?=$title?></span>
-<p><?=text?></p>
+<p><?=$text?></p>
 </div>
