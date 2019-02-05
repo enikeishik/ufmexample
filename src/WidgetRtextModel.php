@@ -12,7 +12,7 @@ namespace Ufo\Modules\Enikeishik\Ufmexample;
 /**
  * Widget model class.
  */
-class WidgetRtextModel
+class WidgetRtextModel implements ModelInterface
 {
     protected $texts = [
         'Some first text', 
