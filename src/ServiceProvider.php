@@ -13,4 +13,8 @@ use Ufo\Modules\ServiceProvider as BaseServiceProvider;
 
 class ServiceProvider extends BaseServiceProvider
 {
+    /**
+     * @see parent
+     */
+    protected static $dir = __DIR__;
 }
