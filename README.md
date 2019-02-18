@@ -21,7 +21,7 @@ Configure composer.json
     ...
     "scripts": {
         "post-update-cmd": [
-            "@php -f loadassets.php enikeishik/ufmexample"
+            "@php -f loadmodule.php enikeishik/ufmexample"
         ]
     }    
 ```
@@ -52,6 +52,16 @@ Add widget
                     'count' => 3, 
                     'filter' => 'marked', 
                 ], 
+            ]
+        ],
+        'another_place_name' => [
+            [
+                'vendor' => 'Enikeishik', 
+                'module' => 'Ufmexample', 
+                'name' => 'Rtext', 
+                'title' => 'UFO Framework Example module random text widget', 
+                'text' => '', 
+                'params' => [], 
             ]
         ]
     ]
